@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dali专利分析报告</title>
+    <script src="https://cdn.tailwindcss.com/3.3.3"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <style>
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        .highlight {
+            background-color: #e0f2fe;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        .tech-feature {
+            border-left: 4px solid #3b82f6;
+            padding-left: 1rem;
+            margin: 1rem 0;
+        }
+        .patent-image {
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .patent-image:hover {
+            transform: scale(1.02);
+        }
+        .mobile-menu {
+            transition: all 0.3s ease;
+            max-height: 0;
+            overflow: hidden;
+        }
+        .mobile-menu.active {
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- 导航栏 -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <i class="fas fa-file-alt text-blue-600 text-xl mr-2"></i>
+                <span class="font-bold text-lg">Dali专利分析报告</span>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#basic-info" class="text-gray-600 hover:text-blue-600 transition">基本信息</a>
+                <a href="#tech-analysis" class="text-gray-600 hover:text-blue-600 transition">技术分析</a>
+                <a href="#design-suggestions" class="text-gray-600 hover:text-blue-600 transition">设计建议</a>
+            </div>
+            <button id="mobileMenuBtn" class="md:hidden text-gray-600">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+        <!-- 移动端菜单 -->
+        <div id="mobileMenu" class="mobile-menu md:hidden bg-white px-4">
+            <div class="py-2">
+                <a href="#basic-info" class="block py-2 text-gray-600 hover:text-blue-600">基本信息</a>
+                <a href="#tech-analysis" class="block py-2 text-gray-600 hover:text-blue-600">技术分析</a>
+                <a href="#design-suggestions" class="block py-2 text-gray-600 hover:text-blue-600">设计建议</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-4 py-8">
+        <!-- 标题部分 -->
+        <div class="text-center mb-12">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Dali自动回缩安全针组件专利分析</h1>
+            <p class="text-lg text-gray-600">专利号: US 11,850,410 B2 | 申请日期: 2021年3月2日 | 专利日期: 2023年12月26日</p>
+        </div>
+
+        <!-- 基本信息部分 -->
+        <section id="basic-info" class="glass-card p-6 mb-8">
+            <div class="flex items-center mb-4">
+                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3">
+                    <i class="fas fa-info-circle"></i>
+                </div>
+                <h2 class="text-2xl font-semibold">专利基本信息</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <div class="mb-4">
+                        <h3 class="font-medium text-gray-700 mb-2">申请人信息</h3>
+                        <p class="text-gray-600">Dali Medical Devices Ltd.，位于Yavne (IL)</p>
+                        <p class="text-gray-600">受让人: DALI MEDICAL DEVICES LTD，位于Yavne (IL)</p>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h3 class="font-medium text-gray-700 mb-2">专利名称</h3>
+                        <p class="text-gray-600">AUTOMATICALLY RETRACTING SAFETY NEEDLE ASSEMBLY（自动回缩安全针组件）</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="font-medium text-gray-700 mb-2">技术说明摘要</h3>
+                    <p class="text-gray-600">自动回缩安全针组件被配置为接收注射器，具有独特的结构和工作机制能够在注射后自动回缩注射器，避免针头暴露，从而提高使用安全性。</p>
+                </div>
+            </div>
+            
+            <div class="mt-6">
+                <h3 class="font-medium text-gray-700 mb-2">专利技术附图</h3>
+                <div class="flex justify-center">
+                    <img src="https://p9-flow-imagex-sign.byteimg.com/ocean-cloud-tos/pdf/486d8d241df237fd9f5b9a4f97f7687c_0_1200.jpg~tplv-a9rns2rl98-resize-crop:447:22:803:73:356:51.jpeg?rk3s=1567c5c4&x-expires=1781764690&x-signature=3%2FZj4YPi8dUSu00nI7PplqhhiS0%3D" 
+                         alt="Dali专利技术附图" 
+                         class="patent-image max-w-full h-auto">
+                </div>
+            </div>
+        </section>
+
+        <!-- 技术分析部分 -->
+        <section id="tech-analysis" class="glass-card p-6 mb-8">
+            <div class="flex items-center mb-4">
+                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3">
+                    <i class="fas fa-microscope"></i>
+                </div>
+                <h2 class="text-2xl font-semibold">专利关键技术分析</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-xl font-semibold mb-3">一、关键技术特征</h3>
+                    
+                    <div class="tech-feature">
+                        <h4 class="font-medium text-gray-800 mb-2">1. 组件构成特征</h4>
+                        <ul class="list-disc pl-5 text-gray-600 space-y-2">
+                            <li><span class="font-medium">外壳</span>: 带有内部外壳(IH)和底壁，为其他部件提供容纳和支撑</li>
+                            <li><span class="font-medium">移动套筒(MOS)</span>: 至少部分位于IH内，具有凸缘壁，可在轴向移动</li>
+                            <li><span class="font-medium">偏置元件(BE)</span>: 位于IH内，向近端偏置MOS</li>
+                            <li><span class="font-medium">注射器</span>: 接收柱塞杆，可在IH内轴向移动，并与MOS连接</li>
+                            <li><span class="font-medium">激活叉(AF)</span>: 部分设置在IH内，有导向臂，与IH和MOS连接</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tech-feature">
+                        <h4 class="font-medium text-gray-800 mb-2">2. 工作过程特征</h4>
+                        <p class="text-gray-600">推进柱塞杆和AF轴向移动，直到AF导向臂允许MOS向近端移动，从而回缩注射器。柱塞杆推进是持续的，没有突然增加的阻力。</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-3">二、设计元素</h3>
+                    
+                    <div class="tech-feature">
+                        <h4 class="font-medium text-gray-800 mb-2">1. 结构设计元素</h4>
+                        <ul class="list-disc pl-5 text-gray-600 space-y-2">
+                            <li>内部外壳和底壁形成封闭稳定空间</li>
+                            <li>移动套筒的凸缘壁增加接触面积</li>
+                            <li>激活叉的导向臂实现锁定和解锁功能</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tech-feature">
+                        <h4 class="font-medium text-gray-800 mb-2">2. 连接设计元素</h4>
+                        <ul class="list-disc pl-5 text-gray-600 space-y-2">
+                            <li>注射器与MOS的连接实现功能联动</li>
+                            <li>激活叉与IH和MOS的连接控制移动状态</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tech-feature">
+                        <h4 class="font-medium text-gray-800 mb-2">三、权利主张范围</h4>
+                        <p class="text-gray-600">推测权利主张范围可能围绕组件整体结构、关键部件和工作过程等方面。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 设计建议部分 -->
+        <section id="design-suggestions" class="glass-card p-6 mb-8">
+            <div class="flex items-center mb-4">
+                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h2 class="text-2xl font-semibold">Summed Medtech设计建议</h2>
+            </div>
+            
+            <div class="bg-blue-50 rounded-lg p-4 mb-6">
+                <div class="flex items-start">
+                    <i class="fas fa-exclamation-triangle text-yellow-500 mt-1 mr-2"></i>
+                    <p class="text-gray-700">
+                        <span class="font-medium">重要说明:</span> 由于缺少Summed Medtech设计资料，暂无法得出Summed Medtech设计是否侵犯Dali专利的结论，后续需补充Summed Medtech设计资料进行详细对比。
+                    </p>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-xl font-semibold mb-3">避免侵权设计建议</h3>
+                    
+                    <div class="bg-white rounded-lg p-4 shadow-sm mb-4">
+                        <h4 class="font-medium text-gray-800 mb-2">1. 组件结构差异</h4>
+                        <p class="text-gray-600">考虑采用不同的外壳结构设计，避免使用内部外壳和底壁的相同配置。</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-4 shadow-sm mb-4">
+                        <h4 class="font-medium text-gray-800 mb-2">2. 移动机制变化</h4>
+                        <p class="text-gray-600">探索替代移动套筒和偏置元件的设计，如使用不同的回缩机制或动力来源。</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-3">技术实现建议</h3>
+                    
+                    <div class="bg-white rounded-lg p-4 shadow-sm mb-4">
+                        <h4 class="font-medium text-gray-800 mb-2">1. 激活机制创新</h4>
+                        <p class="text-gray-600">开发不同于激活叉导向臂的锁定/解锁机制，如电子感应或机械按钮触发。</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-4 shadow-sm mb-4">
+                        <h4 class="font-medium text-gray-800 mb-2">2. 工作流程优化</h4>
+                        <p class="text-gray-600">设计不同的注射器回缩工作流程，避免与Dali专利中描述的相同步骤序列。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-6 bg-white rounded-lg p-4 shadow-sm">
+                <h4 class="font-medium text-gray-800 mb-2">专利规避策略总结</h4>
+                <p class="text-gray-600">建议Summed Medtech在设计自动回缩安全针组件时，从结构设计、连接方式和工作原理三个方面进行创新，确保与Dali专利的关键技术特征有显著差异。具体实施前应进行详细的专利侵权分析。</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-50 py-6">
+        <div class="container mx-auto px-4 text-center text-gray-500 text-sm">
+            <p>created by <a href="https://space.coze.cn" class="text-blue-600 hover:underline">coze space</a></p>
+            <p class="mt-1">页面内容均由 AI 生成，仅供参考</p>
+        </div>
+    </footer>
+
+    <script>
+        // 移动端菜单切换
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // 如果是移动端菜单，点击后关闭菜单
+                    if (this.closest('.mobile-menu')) {
+                        document.getElementById('mobileMenu').classList.remove('active');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
