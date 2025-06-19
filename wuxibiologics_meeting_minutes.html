@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>药明双腔给药装置研讨会纪要</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #1a73e8;
+            --primary-light: #4285f4;
+            --secondary: #34a853;
+            --accent: #fbbc04;
+            --dark: #202124;
+            --light: #f8f9fa;
+            --gray: #5f6368;
+            --border: #dadce0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f5f7fa;
+            padding: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            padding: 25px 30px;
+            border-bottom: 4px solid var(--accent);
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        h1 i {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 50%;
+        }
+        
+        .header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 15px;
+            font-size: 1.05rem;
+        }
+        
+        .info-card {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .info-card i {
+            font-size: 1.4rem;
+        }
+        
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 30px;
+        }
+        
+        .summary-card {
+            background: var(--light);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--primary);
+        }
+        
+        .summary-card h2 {
+            color: var(--primary);
+            margin-bottom: 18px;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .key-points {
+            background: #e8f0fe;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 0 30px 30px;
+            border: 1px solid #d2e3fc;
+        }
+        
+        .key-points h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .tag {
+            background: var(--primary);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .tag.tech { background: #4285f4; }
+        .tag.market { background: #34a853; }
+        .tag.coop { background: #fbbc04; color: var(--dark); }
+        .tag.risk { background: #ea4335; }
+        
+        .content-section {
+            padding: 30px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .content-section:last-child {
+            border-bottom: none;
+        }
+        
+        .content-section h2 {
+            color: var(--primary);
+            font-size: 1.6rem;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        th {
+            background: var(--primary);
+            color: white;
+            text-align: left;
+            padding: 16px 20px;
+            font-weight: 500;
+        }
+        
+        td {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .progress-container {
+            margin: 25px 0;
+        }
+        
+        .progress-bar {
+            height: 12px;
+            background: #e0e0e0;
+            border-radius: 6px;
+            margin: 10px 0 15px;
+            overflow: hidden;
+        }
+        
+        .progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 6px;
+            width: 65%;
+        }
+        
+        .progress-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        .todo-section {
+            background: #fff8e1;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 30px;
+            border: 1px solid #fdd663;
+        }
+        
+        .todo-section h2 {
+            color: #d93025;
+            font-size: 1.6rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: var(--gray);
+            font-size: 0.9rem;
+            background: var(--light);
+            border-top: 1px solid var(--border);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .summary-grid {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+            
+            .content-section, .todo-section {
+                padding: 20px;
+            }
+            
+            .key-points {
+                margin: 0 20px 20px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .header-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            header {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            .summary-card {
+                padding: 20px;
+            }
+            
+            .todo-section {
+                margin: 20px 15px;
+            }
+        }
+        
+        .highlight {
+            background-color: #e8f0fe;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        
+        .icon-header {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>
+                <i class="fas fa-file-medical-alt"></i>
+                药明双腔给药装置研讨会纪要
+            </h1>
+            <p>智能给药装置的设计与应用讨论 - 关键要点总结</p>
+            
+            <div class="header-info">
+                <div class="info-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span><strong>会议日期：</strong> 2025年6月19日</span>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-clock"></i>
+                    <span><strong>会议时长：</strong> 59分钟</span>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-users"></i>
+                    <span><strong>参与方：</strong> 药明、森迈</span>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-tag"></i>
+                    <span><strong>类型：</strong> 产品研讨与合作沟通会议</span>
+                </div>
+            </div>
+        </header>
+        
+        <div class="summary-grid">
+            <div class="summary-card">
+                <h2><i class="fas fa-bullseye"></i> 核心目标</h2>
+                <p>深化双腔智能给药装置设计细节，明确技术路径与市场合作策略</p>
+            </div>
+            
+            <div class="summary-card">
+                <h2><i class="fas fa-hourglass-half"></i> 关键时间点</h2>
+                <ul>
+                    <li><strong>周一：</strong> 双腔合作客户会面</li>
+                    <li><strong>下周：</strong> 签署Butterfly战略协议</li>
+                    <li><strong>2.5-3月：</strong> 开模至样品交付</li>
+                    <li><strong>3-6月：</strong> 工程批验证周期</li>
+                </ul>
+            </div>
+            
+            <div class="summary-card">
+                <h2><i class="fas fa-tasks"></i> 待办重点</h2>
+                <ul>
+                    <li>准备内包材需求问卷</li>
+                    <li>传达药明国内价格调整政策</li>
+                    <li>安排双腔合作会议</li>
+                    <li>推进Butterfly战略合作</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="key-points">
+            <h2><i class="fas fa-key"></i> 核心结论速览</h2>
+            
+            <div class="tags">
+                <div class="tag tech">技术</div>
+                <div class="tag market">市场</div>
+                <div class="tag coop">合作</div>
+                <div class="tag risk">风险</div>
+            </div>
+            
+            <ul>
+                <li><span class="highlight">双腔操作</span>整合为单按钮流程，排气设计需动态适配气泡量</li>
+                <li>国内双腔应用率低（仅药明+福州），需破除"药明高价"误解</li>
+                <li>Butterfly眼部注射项目进入战略签约阶段</li>
+                <li>余量控制与<span class="highlight">1%过敏风险</span>需明确预案</li>
+                <li>智能装置可减少用药错误，提高患者依从性</li>
+                <li>高粘度药物注射辅助器需合理设计针管直径比例</li>
+            </ul>
+        </div>
+        
+        <div class="content-section">
+            <h2><span class="icon-header"><i class="fas fa-microchip"></i></span> 产品设计深度解析</h2>
+            
+            <h3><i class="fas fa-cogs"></i> 关键技术突破点</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>模块</th>
+                        <th>设计方案</th>
+                        <th>挑战应对</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>双腔操作</strong></td>
+                        <td>
+                            <ul>
+                                <li>单按钮集成混合/排气/注射流程</li>
+                                <li>推杆方向差异化（混合↓ 排气↑）</li>
+                                <li>根据内包材规格确定双腔大小</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>电子预设档位简化旋转操作</li>
+                                <li>考虑人因工程，避免过长导致单手无法操作</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>智能排气</strong></td>
+                        <td>
+                            <ul>
+                                <li>弹簧/机械式推杆旋转格数控制</li>
+                                <li>基于最大气泡量+灌装误差设计冗余</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>复溶难度→气泡量动态模型</li>
+                                <li>COP/玻璃内径误差叠加补偿</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>安全监测</strong></td>
+                        <td>
+                            <ul>
+                                <li>Flow check六次连续检测（针/胶塞/药液）</li>
+                                <li>堵针判定：二次无出液即换针</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>预留药液量导致余量控制难题</li>
+                                <li>新针强制检测规避双头刺等瑕疵</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3><i class="fas fa-user-friends"></i> 人因工程优化</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>功能</th>
+                        <th>设计要点</th>
+                        <th>用户价值</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>力度控制</strong></td>
+                        <td>按压弹簧设定≈5-6N（对标诺和诺德Flex Touch）</td>
+                        <td>避免高压操作对女生和小孩不友好</td>
+                    </tr>
+                    <tr>
+                        <td><strong>语音引导</strong></td>
+                        <td>生长激素注射步骤语音提示</td>
+                        <td>儿童友好型操作指导</td>
+                    </tr>
+                    <tr>
+                        <td><strong>防误设计</strong></td>
+                        <td>
+                            <ul>
+                                <li>患者不可自装药液（预装卡扣式包材）</li>
+                                <li>4G/蓝牙双模提醒系统</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>避免操作失误</li>
+                                <li>提高阿兹海默患者用药安全</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="content-section">
+            <h2><span class="icon-header"><i class="fas fa-handshake"></i></span> 战略合作与项目推进</h2>
+            
+            <div style="display: flex; flex-wrap: wrap; gap: 30px; margin: 20px 0;">
+                <div style="flex: 1; min-width: 300px;">
+                    <h3><i class="fas fa-butterfly"></i> Butterfly合作项目</h3>
+                    <ul>
+                        <li><strong>领域：</strong> 眼部注射器械（对标罗氏产品）</li>
+                        <li><strong>分工：</strong> 
+                            <ul>
+                                <li>Butterfly：内包材生产</li>
+                                <li>药明：外包材与系统集成</li>
+                            </ul>
+                        </li>
+                        <li><strong>节点：</strong> 下周签署战略协议并启动宣传</li>
+                        <li><strong>背景：</strong> 兰瑞肽专利过期后市场需求增长</li>
+                    </ul>
+                </div>
+                
+                <div style="flex: 1; min-width: 300px;">
+                    <h3><i class="fas fa-road"></i> 开发关键路径</h3>
+                    <p><strong>内包材依赖：</strong></p>
+                    <ul>
+                        <li>需获取规格/尺寸/装量/混合体积等核心数据</li>
+                        <li>尺寸微调→局部适配；重大变更→结构重构</li>
+                    </ul>
+                    
+                    <div class="progress-container">
+                        <p><strong>项目时间线：</strong></p>
+                        <div class="progress-bar">
+                            <div class="progress"></div>
+                        </div>
+                        <div class="progress-labels">
+                            <span>开模</span>
+                            <span>样品交付</span>
+                            <span>验证完成</span>
+                        </div>
+                        <p>开模→样品（2.5-3月）→验证（+3-6月）</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2><span class="icon-header"><i class="fas fa-chart-line"></i></span> 市场策略关键信息</h2>
+            
+            <ul>
+                <li><strong><i class="fas fa-gem"></i> 价值主张：</strong> 
+                    <ul>
+                        <li>降低用药错误率（阿兹海默患者提醒系统）</li>
+                        <li>提升依从性（生长激素周注射手机提醒）</li>
+                        <li>语音引导简化操作（儿童患者友好）</li>
+                    </ul>
+                </li>
+                <li><strong><i class="fas fa-comment-dots"></i> 误解澄清：</strong> 
+                    针对性调整国内客户定价策略，打破"药明高价"市场认知
+                </li>
+                <li><strong><i class="fas fa-industry"></i> 双腔市场现状：</strong> 
+                    国内仅2家应用（药明+福州），高投资门槛制约普及
+                </li>
+                <li><strong><i class="fas fa-exclamation-triangle"></i> 风险提示：</strong> 
+                    材料需通过稳定性与生物相容性测试，对1%过敏风险需明确警告提示
+                </li>
+            </ul>
+        </div>
+        
+        <div class="todo-section">
+            <h2><i class="fas fa-list-check"></i> 下一步行动项</h2>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width:60%">任务</th>
+                        <th>负责人</th>
+                        <th>时间点</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>安排双腔合作客户会议（药明相关人员）</td>
+                        <td>会议组织者</td>
+                        <td>周一</td>
+                    </tr>
+                    <tr>
+                        <td>制定内包材需求问卷（规格/尺寸/装量等）</td>
+                        <td>Doris/福哥</td>
+                        <td>尽快</td>
+                    </tr>
+                    <tr>
+                        <td>向潜在客户传达药明国内价格调整政策</td>
+                        <td>淑英/市场部</td>
+                        <td>持续跟进</td>
+                    </tr>
+                    <tr>
+                        <td>推进Butterfly战略合作协议签署</td>
+                        <td>福哥/合作团队</td>
+                        <td>下周</td>
+                    </tr>
+                    <tr>
+                        <td>完成材料稳定性与生物相容性测试计划</td>
+                        <td>研发团队</td>
+                        <td>样品交付前</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <footer>
+            <p>纪要生成时间：2025年6月19日 | 信息保密等级：内部使用</p>
+            <p>© 2025 药明康德 - 智能医疗器械事业部</p>
+        </footer>
+    </div>
+</body>
+</html>
